@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:id="@+id/im_main_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/main_t" />
+        <ImageView
+            android:layout_below="@id/im_main_t"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/main_s" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fight_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="194dp">
+
+            <!--app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"-->
+            <ImageView
+                android:id="@+id/iv_light"
+                style="@style/main_setting_button_style"
+                android:layout_alignTop="@id/iv_sos"
+                android:layout_alignBottom="@id/iv_sos"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/main_setting_button_left_right_margin"
+                android:src="@drawable/ic_flight_close" />
+
+            <ImageView
+                android:id="@+id/iv_sos"
+                style="@style/main_setting_button_style"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_sos" />
+
+            <ImageView
+                android:id="@+id/iv_color"
+                style="@style/main_setting_button_style"
+                android:layout_alignTop="@id/iv_sos"
+                android:layout_alignBottom="@id/iv_sos"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/main_setting_button_left_right_margin"
+                android:src="@drawable/ic_screen_close" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_top"
+            android:layout_marginTop="32dp">
+
+            <ImageView
+                android:id="@+id/iv_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_close" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/iv_switch"
+                android:visibility="gone">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottie_view"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="-15dp"
+                    android:layout_toEndOf="@+id/iv_switch"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="38dp"
+                android:layout_height="36dp"
+
+                android:layout_marginLeft="23dp"
+
+                android:layout_toRightOf="@id/iv_switch"
+                android:layout_marginTop="150dp"
+                android:src="@drawable/ic_setting_close" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_flash"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="203dp"
+            android:padding="15dp"
+            android:src="@drawable/icon_back" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="205dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/rl_progress"
+            >
+
+
+
+            <com.dema.versatile.flashlight.main.view.VerticalSeekBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="296dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/transparent"
+                android:paddingStart="0dp"
+                android:paddingEnd="10px"
+                android:progress="0"
+                android:progressDrawable="@drawable/seekbar_bg"
+                android:thumb="@drawable/icon_seekbar_thumb"
+                android:thumbOffset="9dp"
+
+                />
+
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_fast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fast_text"
+            android:textAllCaps="true"
+            android:textColor="#E6E6E6"
+            android:textSize="11sp"
+            android:layout_toRightOf="@id/rl_progress"
+
+            android:layout_marginTop="225dp"
+            android:layout_marginLeft="3dp"
+            />
+        <TextView
+            android:id="@+id/tv_slow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/rl_progress"
+            android:text="@string/slow_text"
+            android:textAllCaps="true"
+            android:textColor="#E6E6E6"
+            android:textSize="11sp"
+            android:layout_marginTop="496dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="3dp"
+            />
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/fl_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

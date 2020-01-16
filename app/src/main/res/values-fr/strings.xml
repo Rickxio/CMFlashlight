@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Lampe de poche super led</string>
+
+    <string name="exit">À la prochaine …</string>
+    <string name="setting">Réglage</string>
+    <string name="setting_startup">Lumière au démarrage</string>
+    <string name="setting_term">Conditions d\'utilisation</string>
+    <string name="setting_privacy">Politique de confidentialité</string>
+
+    <string name="alert_title">Économisez votre batterie</string>
+    <string name="alert_sub">Trop d\'applications attirent la vie de votre batterie</string>
+    <string name="alert_bt">sauver</string>
+    <string name="battery_title">Économiseur de batterie</string>
+    <string name="battery_sub">Fermeture d\'applications haute puissance</string>
+    <string name="battery_complete">Votre batterie a été sauvegardée</string>
+
+    <string name="more_function">Plus de fonction</string>
+    <string name="more_function_tools">Outils utilitaires</string>
+    <string name="more_function_setting">Réglage</string>
+    <string name="boost">Renforcer</string>
+    <string name="clean">Nettoyer</string>
+    <string name="battery_saver">Économiseur de batterie</string>
+    <string name="cool">CPU Cooler</string>
+    <string name="network_optimization">Optimisation du réseau</string>
+
+
+    <!--    动画文案-->
+    <string name="save_battery_animation_1">Détecter la consommation d\'énergie de l\'application…</string>
+    <string name="save_battery_animation_2">Détecter les paramètres du système…</string>
+    <string name="save_battery_animation_3">Mise hors tension de l\'application…</string>
+    <string name="save_battery_animation_4">Optimiser les paramètres du système…</string>
+
+    <string name="cool_down_animation_1">Vérification de l\'utilisation de la mémoire…</string>
+    <string name="cool_down_animation_2">Vérification de l\'utilisation de la batterie…</string>
+    <string name="cool_down_animation_3">Vérification de l\'utilisation du processeur…</string>
+    <string name="cool_down_animation_4">Libérer le cache…</string>
+    <string name="cool_down_animation_5">Optimiser l\'utilisation du processeur…</string>
+    <string name="cool_down_animation_6">Optimiser l\'utilisation de la batterie…</string>
+
+
+    <!--完成信息提示-->
+    <string name="complete_info_cooldown">La température est réduite de %1$d°C</string>
+    <string name="complete_info_booster">Performance augmentée de %1$d%%</string>
+    <string name="complete_info_save_battery">Endurance de la batterie par %1$d%%</string>
+    <string name="complete_info_storage">Stockage nettoyé %1$dMB</string>
+    <string name="complete_info_network">La vitesse du réseau est optimisée par %d%%.</string>
+
+    <string name="complete_info_over">Félicitation! Presque meilleur statut.</string>
+    <string name="confirm_close_scene">Lorsqu\'il est éteint, il ne peut pas vous rappeler d\'optimiser votre téléphone, de renforcer votre système, etc. à temps. Etes-vous sûr de vous éteindre?</string>
+    <string name="cancel">ANNULER</string>
+    <string name="ok">D\'accord</string>
+    <string name="notification">Notification</string>
+    <string name="rate_us">Évaluez nous</string>
+    <string name="text_grade">Votre soutien est le moteur de notre amélioration continue</string>
+    <string name="thanks_feedback">Merci pour vos commentaires</string>
+
+    <!--    网络优化动画页文案-->
+    <string-array name="words_network">
+        <item>Test du statut du réseau…</item>
+        <item>Vérification des paramètres réseau…</item>
+        <item>Détecter la consommation du réseau d\'applications…</item>
+        <item>Arrêt du réseau consommer des applications…</item>
+        <item>Optimiser les paramètres du système…</item>
+        <item>Avoir fini</item>
+    </string-array>
+
+    <!--    降温页动画文案-->
+    <string-array name="words_cool">
+        <item>Vérification de l\'utilisation de la mémoire…</item>
+        <item>Vérification de l\'utilisation de la batterie…</item>
+        <item>Vérification de l\'utilisation du processeur…</item>
+        <item>Libérer le cache…</item>
+        <item>Optimiser l\'utilisation du processeur…</item>
+        <item>Optimiser l\'utilisation de la batterie…</item>
+        <item>Avoir fini</item>
+    </string-array>
+
+    <!--    电池优化文案-->
+    <string-array name="words_battery_optimize">
+        <item>Détecter la consommation d\'énergie de l\'application…</item>
+        <item>Détecter les paramètres du système…</item>
+        <item>Mise hors tension de l\'application…</item>
+        <item>Optimiser les paramètres du système…</item>
+        <item>Avoir fini</item>
+    </string-array>
+</resources>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dema.versatile.flashlight.main.MoreActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_back_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="21dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/iv_back_more"
+            android:text="@string/more_function"
+            android:textColor="@color/colorWhite1"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:alpha="0.7"
+        android:text="@string/more_function_tools"
+        android:textColor="@color/colorWhite1"
+        android:textSize="12dp" />
+    <View
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:alpha="0.3"
+        android:background="@color/colorDivider" />
+
+    <TextView
+        android:id="@+id/tv_boost"
+        style="@style/MoreTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/icon_boost"
+        android:text="@string/boost" />
+
+    <TextView
+        android:id="@+id/tv_clean"
+        style="@style/MoreTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableStart="@drawable/icon_clean"
+        android:text="@string/clean" />
+
+    <TextView
+        android:id="@+id/tv_battery"
+        style="@style/MoreTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableStart="@drawable/icon_battery_saver"
+        android:text="@string/battery_saver" />
+
+    <TextView
+        android:id="@+id/tv_cooler"
+        style="@style/MoreTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableStart="@drawable/icon_cooler"
+        android:text="@string/cool" />
+
+    <TextView
+        android:id="@+id/tv_network"
+        style="@style/MoreTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:drawableStart="@drawable/icon_wifi"
+        android:text="@string/network_optimization" />
+    <View
+        android:layout_marginTop="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:alpha="0.3"
+        android:background="@color/colorDivider" />
+    <TextView
+        android:id="@+id/tv_setting"
+        android:drawableEnd="@drawable/ic_right_arrow"
+        android:drawableStart="@drawable/ic_setting"
+        style="@style/MoreTextStyle"
+        android:paddingEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/setting" />
+
+
+
+    <!--    <View-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0.5dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginTop="4dp"-->
+    <!--        android:alpha="0.3"-->
+    <!--        android:background="@color/colorWhite1" />-->
+
+    <!--    <RelativeLayout-->
+    <!--        android:id="@+id/tv_light"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="10dp">-->
+    <!--        <TextView-->
+    <!--            style="@style/MoreTextStyle"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="50dp"-->
+    <!--            android:drawableStart="@drawable/icon_light"-->
+    <!--            android:text="@string/setting_startup" />-->
+
+    <!--        <androidx.appcompat.widget.SwitchCompat-->
+    <!--            android:id="@+id/sc_startup"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_alignParentEnd="true"-->
+    <!--            android:layout_centerVertical="true"-->
+    <!--            android:layout_marginLeft="@dimen/setting_item_switch_margin_x"-->
+    <!--            android:layout_marginRight="@dimen/setting_item_switch_margin_x"-->
+    <!--            app:theme="@style/SwitchTheme" />-->
+    <!--    </RelativeLayout>-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_terms"-->
+    <!--        style="@style/MoreTextStyle"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:drawableStart="@drawable/icon_service"-->
+    <!--        android:text="@string/setting_term" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_privacy"-->
+    <!--        style="@style/MoreTextStyle"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:drawableStart="@drawable/icon_policy"-->
+    <!--        android:text="@string/setting_privacy" />-->
+</LinearLayout>

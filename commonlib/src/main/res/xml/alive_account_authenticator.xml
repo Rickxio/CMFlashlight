@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<account-authenticator xmlns:n1="http://schemas.android.com/apk/res/android"
+    n1:accountType="@string/alive_account_type"
+    n1:icon="@drawable/ic_launcher"
+    n1:label="@string/app_name"
+    n1:smallIcon="@drawable/ic_launcher" />

@@ -1,0 +1,318 @@
+<resources>
+    <string name="app_name">CMScene</string>
+
+    <!--pull-->
+    <string-array name="pull_step_title">
+        <item>Take a walk after meal</item>
+        <item>Stretch your legs to walk</item>
+    </string-array>
+    <string-array name="pull_step_content">
+        <item>Help body aerobic breathe</item>
+        <item>Check how many steps you take</item>
+    </string-array>
+    <string-array name="pull_step_button">
+        <item>Go</item>
+    </string-array>
+    <string-array name="pull_drink_title">
+        <item>It\'s time to DRINK!</item>
+        <item>Add energy of water now</item>
+    </string-array>
+    <string-array name="pull_drink_content">
+        <item>Arouse your metabolism with a glass of water</item>
+        <item>Keep hydrated, keep fit！</item>
+    </string-array>
+    <string-array name="pull_drink_button">
+        <item>Go</item>
+    </string-array>
+    <string-array name="pull_fruit_title">
+        <item>Eaten fruit today?</item>
+        <item>It\'s time to input vitamins!</item>
+    </string-array>
+    <string-array name="pull_fruit_content">
+        <item>Eating fruit can enhance your immunity</item>
+        <item>Remember to eat more fruits for adding vitamins</item>
+    </string-array>
+    <string-array name="pull_fruit_button">
+        <item>Go</item>
+    </string-array>
+    <string-array name="pull_breath_title">
+        <item>Take a deep breath now</item>
+        <item>Goodbye stress, go relax</item>
+    </string-array>
+    <string-array name="pull_breath_content">
+        <item>Deep breathing improve health</item>
+        <item>How to take a deep breath correctly?</item>
+    </string-array>
+    <string-array name="pull_breath_button">
+        <item>Go</item>
+    </string-array>
+    <string-array name="pull_plank_title">
+        <item>Challenge the plank</item>
+        <item>Try to do a plank</item>
+    </string-array>
+    <string-array name="pull_plank_content">
+        <item>How long can you hold in plank?</item>
+        <item>Do plank to improve your shape</item>
+    </string-array>
+    <string-array name="pull_plank_button">
+        <item>Go</item>
+    </string-array>
+    <string-array name="pull_neck_title">
+        <item>Move your neck</item>
+        <item>Watch out neck stiffen</item>
+    </string-array>
+    <string-array name="pull_neck_content">
+        <item>Neck movement can relieve fatigue</item>
+        <item>Neck exercise prevent cervical issue</item>
+    </string-array>
+    <string-array name="pull_neck_button">
+        <item>Go</item>
+    </string-array>
+    <string-array name="pull_stretch_title">
+        <item>Take 3-min to stretch</item>
+        <item>Take a stretch to relax</item>
+    </string-array>
+    <string-array name="pull_stretch_content">
+        <item>Save your sedentary body</item>
+        <item>Relax your tight body</item>
+    </string-array>
+    <string-array name="pull_stretch_button">
+        <item>Go</item>
+    </string-array>
+    <string-array name="pull_report_title">
+        <item>Health report is here!</item>
+        <item>Health report is coming!</item>
+    </string-array>
+    <string-array name="pull_report_content">
+        <item>Check what you did today</item>
+        <item>Click to view your health details</item>
+    </string-array>
+    <string-array name="pull_report_button">
+        <item>Go</item>
+    </string-array>
+    <string-array name="pull_battery_title">
+        <item>Power consumes too fast!</item>
+    </string-array>
+    <string-array name="pull_battery_content">
+        <item>Battery optimization is recommended to extend standby time.</item>
+    </string-array>
+    <string-array name="pull_battery_button">
+        <item>Save Now</item>
+    </string-array>
+    <string-array name="pull_boost_title">
+        <item>Phone is too slow</item>
+    </string-array>
+    <string-array name="pull_boost_content">
+        <item>APPS running in the background,recommended to accelerate!</item>
+    </string-array>
+    <string-array name="pull_boost_button">
+        <item>Boost Now</item>
+    </string-array>
+    <string-array name="pull_clean_title">
+        <item>Too much junk</item>
+    </string-array>
+    <string-array name="pull_clean_content">
+        <item>It is detected that a large number of junk files occupy your space, it is recommended to clean up!</item>
+    </string-array>
+    <string-array name="pull_clean_button">
+        <item>Clean Now</item>
+    </string-array>
+    <string-array name="pull_cool_title">
+        <item>Temperature is too high</item>
+    </string-array>
+    <string-array name="pull_cool_content">
+        <item>If the temperature of the phone is too high, it will affect the life of the phone. It is recommended to cool down!</item>
+    </string-array>
+    <string-array name="pull_cool_button">
+        <item>Cool Now</item>
+    </string-array>
+    <string-array name="pull_network_title">
+        <item>Network is not good</item>
+    </string-array>
+    <string-array name="pull_network_content">
+        <item>Optimize network conditions and bid farewell to network issues!</item>
+    </string-array>
+    <string-array name="pull_network_button">
+        <item>Speed UP</item>
+    </string-array>
+
+    <!--tips-->
+    <string-array name="tips_sleep_title">
+        <item>Get enough sleep</item>
+        <item>Avoid bright lights</item>
+        <item>Relaxing bedtime ritual</item>
+        <item>Stick to a sleep schedule</item>
+        <item>Avoid naps</item>
+        <item>Evaluate your room</item>
+        <item>Comfortable mattress</item>
+        <item>Keep your circadian</item>
+        <item>Control foods before sleep</item>
+        <item>Avoid eating large meals</item>
+        <item>Wind down</item>
+        <item>Avoid electronics</item>
+        <item>Do something relaxing</item>
+        <item>Go to bed early</item>
+        <item>Don\'t drink wine</item>
+        <item>Sleep tips</item>
+        <item>Sleep tips</item>
+        <item>Sleep tips</item>
+        <item>Include physical activity</item>
+        <item>Create a restful environment</item>
+    </string-array>
+    <string-array name="tips_sleep_content">
+        <item>The importance of getting enough quality sleep cannot be overstated.</item>
+        <item>Bright lights in the evening, it may disrupt your production of the sleep hormone melatonin.</item>
+        <item>A relaxing, routine activity right before bedtime to get sound and deep sleep or remain asleep.</item>
+        <item>Stick to a sleep schedule. This helps to regulate your body\'s clock and could help you fall asleep and stay asleep for the night.</item>
+        <item>Power napping may help you get through the day, but if you find that you can\'t fall asleep, eliminating even short catnaps may help.</item>
+        <item>Design your sleep environment to establish the conditions you need for sleep. Your bedroom should be cool.</item>
+        <item>Sleep on a comfortable mattress and pillows. Make sure your mattress is comfortable and supportive.</item>
+        <item>Use bright light to help manage your circadian rhythms. This will keep your circadian rhythms in check.</item>
+        <item>Avoid alcohol, cigarettes, and heavy meals in the evening. Alcohol, cigarettes and caffeine can disrupt sleep. </item>
+        <item>Eating big or spicy meals can cause discomfort from indigestion that can make it hard to sleep.</item>
+        <item>Your body needs time to shift into sleep mode, so spend the last hour before bed doing a calming activity such as reading.</item>
+        <item>If you have trouble sleeping, avoid electronics before bed or in the middle of the night.</item>
+        <item>If you can\'t sleep, go into another room and do something relaxing until you feel tired.</item>
+        <item>Go to bed early and get up early can make your feel more energetic in the next day.</item>
+        <item>Even though alcohol might make you feel sleepy, it can disrupt sleep later in the night.</item>
+        <item>Go to bed and get up at the same time every day.</item>
+        <item>Don\'t go to bed over hungry or over stuffed.</item>
+        <item>Do not sleep in the open air at night.</item>
+        <item>Regular physical activity can promote better sleep. Avoid being active too close to bedtime, however.</item>
+        <item>Create a room that\'s ideal for sleeping. Often, this means cool, dark and quiet.</item>
+    </string-array>
+    <string-array name="tips_health_title">
+        <item>Choose mindfully</item>
+        <item>Read labels</item>
+        <item>Watch your calories</item>
+        <item>Eat reasonable portions</item>
+        <item>Cook and eat at home</item>
+        <item>Heart-Check mark</item>
+        <item>Common Foods</item>
+        <item>Food Diary</item>
+        <item>Superfoods Infographic</item>
+        <item>Foods Under $1</item>
+        <item>Healthy Post-Play Snacks</item>
+        <item>3 Meals a Day</item>
+        <item>Food Fact vs Perception</item>
+        <item>Don\'t Deal with Picky Eaters</item>
+        <item>Types of Whole Grains</item>
+        <item>Don\'t drink sugar calories</item>
+        <item>Eat nuts</item>
+        <item>Eat real food</item>
+        <item>Don\'t fear coffee</item>
+        <item>Eat fatty fish</item>
+        <item>Probiotics and fiber</item>
+        <item>Drink some water</item>
+        <item>Don\'t overcook</item>
+        <item>Take vitamin D3</item>
+        <item>Eat vegetables and fruits</item>
+        <item>Enough protein</item>
+        <item>Do some cardio</item>
+        <item>Use extra virgin olive oil</item>
+        <item>Minimize your sugar intake</item>
+        <item>Refined carbs</item>
+        <item>Don\'t fear saturated fat</item>
+        <item>Lift heavy things</item>
+        <item>Avoid artificial trans fats</item>
+        <item>Use plenty of herbs and spices</item>
+        <item>Take care of your relationships</item>
+        <item>Track your food intake</item>
+        <item>Belly fat first</item>
+        <item>Don\'t go on a diet</item>
+        <item>Eat eggs, yolk and all</item>
+        <item>Keep healthy dietary habit</item>
+        <item>Eight glasses</item>
+        <item>Light and less greasy diet</item>
+        <item>Stretching and yoga</item>
+        <item>Good points of stretching</item>
+        <item>Traditional resistance training</item>
+        <item>A yoga knowledge</item>
+        <item>Healthy tips</item>
+        <item>Healthy tips</item>
+        <item>Healthy tips</item>
+        <item>Maintaining a tranquil mood</item>
+    </string-array>
+    <string-array name="tips_health_content">
+        <item>Even with healthier foods. Ingredients and nutrient content can vary a lot.</item>
+        <item>Compare nutrition information on package labels and select products.</item>
+        <item>To maintain a healthy weight, eat only as many calories as you use up through physical activity. </item>
+        <item>Often this is less than you are served, especially when eating out.</item>
+        <item>You\'ll have more control over ingredients and preparation methods.</item>
+        <item>Look for the Heart-Check mark to easily identify foods that can be part of an overall healthy eating pattern.</item>
+        <item>Healthy home cooking and smart shopping puts you in control of what goes into your recipes and your body. </item>
+        <item>How to Keep Track of What You Eat - Learn how to keep track of what you eat in order to lose weight or maintain a healthy weight.</item>
+        <item>So-called “superfoods” alone won’t make you healthier – but adding these nutritious foods to an already balanced diet can bring health benefits.</item>
+        <item>Eating healthy on a budget can be done! Being creative can help you stick to your budget and incorporate nutritious foods into your diet. </item>
+        <item>All too often, kids are rewarded with unhealthy foods and sugary drinks and desserts, but there are lots of healthy choices that taste great!</item>
+        <item>The number of meals you eat may not be so important. How you eat those meals is what matters most when it comes to lose weight.</item>
+        <item>Many shoppers assume organic products are more nutritious and safer to eat, but these perceptions are based more on hype than hard science.</item>
+        <item>Picky eaters can miss out on a lot of good food, they can also miss out on important nutrients found in foods often on the I-Don’t-Eat list.</item>
+        <item>While you may be familiar with brown rice and 100% whole wheat bread, there are lots of other tasty whole grain options.</item>
+        <item>Sugary drinks are among the most fattening items you can put into your body.</item>
+        <item>Despite being high in fat, nuts are incredibly nutritious and healthy.</item>
+        <item>These foods have been engineered to trigger your pleasure centers, so they trick your brain into overeating.</item>
+        <item>It’s high in antioxidants, and studies have linked coffee intake to longevity and a reduced risk of type 2 diabetes, and numerous other illnesses.</item>
+        <item>Fish is a great source of high-quality protein and healthy fat.</item>
+        <item>The bacteria in your gut, collectively called the gut microbiota, are incredibly important for overall health.</item>
+        <item>Drinking enough water can have numerous benefits. Surprisingly, it can boost the number of calories you burn.</item>
+        <item>Meat can be a nutritious and healthy part of your diet. It\'s very high in protein and contains various important nutrients.</item>
+        <item>If you don\'t get much sun exposure. Sunlight is a great source of vitamin D. Yet, most people don\'t get enough sun exposure.</item>
+        <item>Vegetables and fruits are loaded with prebiotic fiber, vitamins, minerals, and many antioxidants, some of which have potent biological effects.</item>
+        <item>Eating enough protein is vital for optimal health. What\'s more, this nutrient is particularly important for weight loss.</item>
+        <item>Doing aerobic exercise, also called cardio, is one of the best things you can do for your mental and physical health.</item>
+        <item>Extra virgin olive oil is one of the healthiest vegetable oils.</item>
+        <item>Added sugar is one of the worst ingredients in the modern diet, as large amounts can harm your metabolic health.</item>
+        <item>Not all carbs are created equal. Refined carbs have been highly processed to remove their fiber. </item>
+        <item>While saturated fat is true that saturated fat raises cholesterol levels, it also raises HDL (good) cholesterol and shrinks your LDL (bad) particles.</item>
+        <item>Lifting weights is one of the best things you can do to strengthen your muscles and improve your body composition.</item>
+        <item>Artificial trans fats are harmful, man-made fats that are strongly linked to inflammation and heart disease.</item>
+        <item>Many incredibly healthy herbs and spices exist.</item>
+        <item>Social relationships are incredibly important not only for your mental well-being but also your physical health.</item>
+        <item>The only way to know exactly how many calories you eat is to weigh your food and use a nutrition tracker.</item>
+        <item>If you have excess belly fat, get rid of it. Belly fat is particularly harmful.</item>
+        <item>Diets are notoriously ineffective and rarely work well in the long term.</item>
+        <item>Whole eggs are so nutritious that they’re often termed “nature\'s multivitamin.”</item>
+        <item>Take more vegetables and fruits; Take less candies and beverages; Stop eating junk food.</item>
+        <item>Drink at least eight glasses a day and walk at least 20 minutes a day. You will got to look this good at your age.</item>
+        <item>A light and less greasy diet is strongly recommended.</item>
+        <item>A recent study found that stretching is just as effective as yoga at decreasing back-pain.</item>
+        <item>Stretching of any kind, whether static or dynamic, can help improve flexibility and decrease back-pain risk and symptoms.</item>
+        <item>Traditional resistance training can improve strength and regain function, especially for everyday activities.</item>
+        <item>Studies found that people who practiced yoga had less back pain and more mobility than people who did other sports.</item>
+        <item>It\'s advised to exercise in the cool early morning or evening.</item>
+        <item>Remember never take too much cold food, fruit, and beverages.</item>
+        <item>Little appetite? sleep less? in low spirits? a one-hour nap after lunch is of great benefit to your health.</item>
+        <item>Maintaining a tranquil mood is of great importance for staying healthy .</item>
+    </string-array>
+    <string-array name="tips_battery_title">
+        <item>Battery optimize</item>
+    </string-array>
+    <string-array name="tips_battery_content">
+        <item>The standby time is extended by %1$d minutes.</item>
+    </string-array>
+    <string-array name="tips_boost_title">
+        <item>Boost complete</item>
+    </string-array>
+    <string-array name="tips_boost_content">
+        <item>Performance increased by %1$d%%</item>
+    </string-array>
+    <string-array name="tips_clean_title">
+        <item>Junk clean complete</item>
+    </string-array>
+    <string-array name="tips_clean_content">
+        <item>Storage cleaned %1$dMB</item>
+    </string-array>
+    <string-array name="tips_cool_title">
+        <item>Cooldown complete</item>
+    </string-array>
+    <string-array name="tips_cool_content">
+        <item>Temperature is reduced by %1$d°C</item>
+    </string-array>
+    <string-array name="tips_network_title">
+        <item>Optimize complete</item>
+    </string-array>
+    <string-array name="tips_network_content">
+        <item>The network speed is optimized by %1$d%%.</item>
+    </string-array>
+</resources>

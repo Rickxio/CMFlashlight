@@ -1,0 +1,121 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dema.versatile.mediation">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".view.AdActivity"
+            android:theme="@style/AdTheme" />
+
+        <!--admob adx-->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/icon_ad"
+            android:label="Ad"
+            android:multiprocess="true"
+            android:noHistory="true"
+            android:taskAffinity="cm.mediation.com.google.android.gms.ads.AdActivity" />
+
+        <!--facebook-->
+        <activity
+            android:name="com.facebook.ads.AudienceNetworkActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/icon_ad"
+            android:label="Ad"
+            android:multiprocess="true"
+            android:noHistory="true"
+            android:taskAffinity="cm.mediation.com.facebook.ads.AudienceNetworkActivity" />
+
+        <!--mopub-->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- MoPub's consent dialog -->
+        <activity
+            android:name="com.mopub.common.privacy.ConsentDialogActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/icon_ad"
+            android:label="Ad"
+            android:multiprocess="true"
+            android:noHistory="true"
+            android:taskAffinity="cm.mediation.com.mopub.common.privacy.ConsentDialogActivity" />
+
+        <!-- All ad formats -->
+        <activity
+            android:name="com.mopub.common.MoPubBrowser"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/icon_ad"
+            android:label="Ad"
+            android:multiprocess="true"
+            android:noHistory="true"
+            android:taskAffinity="cm.mediation.com.mopub.common.MoPubBrowser" />
+
+        <!-- Interstitials -->
+        <activity
+            android:name="com.mopub.mobileads.MoPubActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/icon_ad"
+            android:label="Ad"
+            android:multiprocess="true"
+            android:noHistory="true"
+            android:taskAffinity="cm.mediation.com.mopub.mobileads.MoPubActivity" />
+
+        <activity
+            android:name="com.mopub.mobileads.MraidActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/icon_ad"
+            android:label="Ad"
+            android:multiprocess="true"
+            android:noHistory="true"
+            android:taskAffinity="cm.mediation.com.mopub.mobileads.MraidActivity" />
+
+        <!-- Rewarded Video and Rewarded Playables -->
+        <activity
+            android:name="com.mopub.mobileads.RewardedMraidActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/icon_ad"
+            android:label="Ad"
+            android:multiprocess="true"
+            android:noHistory="true"
+            android:taskAffinity="cm.mediation.com.mopub.mobileads.RewardedMraidActivity" />
+
+        <activity
+            android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/icon_ad"
+            android:label="Ad"
+            android:multiprocess="true"
+            android:noHistory="true"
+            android:taskAffinity="cm.mediation.com.mopub.mobileads.MraidVideoPlayerActivity" />
+    </application>
+</manifest>

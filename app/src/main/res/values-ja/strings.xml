@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">スーパーLED懐中電灯</string>
+
+    <string name="exit">またね …</string>
+    <string name="setting">セッティング</string>
+    <string name="setting_startup">起動時に点灯</string>
+    <string name="setting_term">利用規約</string>
+    <string name="setting_privacy">個人情報保護方針</string>
+
+    <string name="alert_title">バッテリーを節約する</string>
+    <string name="alert_sub">バッテリーの寿命を延ばすアプリが多すぎます</string>
+    <string name="alert_bt">セーブ</string>
+    <string name="battery_title">バッテリーセーバー</string>
+    <string name="battery_sub">高出力アプリを閉じる</string>
+    <string name="battery_complete">バッテリーが保存されました</string>
+
+    <string name="more_function">より多くの機能</string>
+    <string name="more_function_tools">ユーティリティツール</string>
+    <string name="more_function_setting">セッティング</string>
+    <string name="boost">ブースト</string>
+    <string name="clean">掃除</string>
+    <string name="battery_saver">バッテリーセーバー</string>
+    <string name="cool">CPUクーラー</string>
+    <string name="network_optimization">ネットワーク最適化</string>
+
+
+    <!--    动画文案-->
+    <string name="save_battery_animation_1">アプリの消費電力の検出…</string>
+    <string name="save_battery_animation_2">システム設定の検出…</string>
+    <string name="save_battery_animation_3">アプリケーションの電源を切る…</string>
+    <string name="save_battery_animation_4">システム設定の最適化…</string>
+
+    <string name="cool_down_animation_1">メモリ使用量を確認する…</string>
+    <string name="cool_down_animation_2">バッテリー使用量の確認…</string>
+    <string name="cool_down_animation_3">CPU使用率の確認…</string>
+    <string name="cool_down_animation_4">キャッシュを解放する…</string>
+    <string name="cool_down_animation_5">CPU使用率の最適化…</string>
+    <string name="cool_down_animation_6">バッテリー使用量の最適化…</string>
+
+
+    <!--完成信息提示-->
+    <string name="complete_info_cooldown">温度が下がる %1$d°C</string>
+    <string name="complete_info_booster">パフォーマンスが向上しました %1$d%%</string>
+    <string name="complete_info_save_battery">バッテリー耐久性 %1$d%%</string>
+    <string name="complete_info_storage">ストレージをクリーニングしました %1$dMB</string>
+    <string name="complete_info_network">ネットワーク速度は以下によって最適化されます %d%%.</string>
+
+    <string name="complete_info_over">おめでとうございます！ ほぼ最高のステータス。</string>
+    <string name="confirm_close_scene">スイッチをオフにすると、電話の最適化、システムのブーストなどを時間内に通知することはできません。 オフにしますか？</string>
+    <string name="cancel">キャンセル</string>
+    <string name="ok">はい</string>
+    <string name="notification">通知</string>
+    <string name="rate_us">私たちを評価してください</string>
+    <string name="text_grade">あなたのサポートは、継続的な改善を推進する力です</string>
+    <string name="thanks_feedback">ご意見ありがとうございます</string>
+
+    <!--    网络优化动画页文案-->
+    <string-array name="words_network">
+        <item>ネットワークステータスのテスト…</item>
+        <item>ネットワーク設定の確認…</item>
+        <item>アプリのネットワーク消費の検出…</item>
+        <item>ネットワーク消費アプリの停止…</item>
+        <item>システム設定の最適化…</item>
+        <item>終了しました</item>
+    </string-array>
+
+    <!--    降温页动画文案-->
+    <string-array name="words_cool">
+        <item>メモリ使用量を確認する…</item>
+        <item>バッテリー使用量の確認…</item>
+        <item>CPU使用率の確認…</item>
+        <item>キャッシュを解放する…</item>
+        <item>CPU使用率の最適化…</item>
+        <item>バッテリー使用量の最適化…</item>
+        <item>終了しました</item>
+    </string-array>
+
+    <!--    电池优化文案-->
+    <string-array name="words_battery_optimize">
+        <item>アプリの消費電力の検出…</item>
+        <item>システム設定の検出…</item>
+        <item>アプリケーションの電源を切る…</item>
+        <item>システム設定の最適化…</item>
+        <item>終了しました</item>
+    </string-array>
+</resources>

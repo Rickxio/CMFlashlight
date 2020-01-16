@@ -1,0 +1,6 @@
+<resources>
+<string name="app_name" translatable="false">CMLib</string>
+<string name="alive_task_affinity" translatable="false">cm.lib.alive</string>
+<string name="alive_account_type" translatable="false">cm.lib.alive.account</string>
+<string name="alive_authority" translatable="false">cm.lib.alive.authority</string>
+</resources>

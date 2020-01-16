@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Super LED Taschenlampe</string>
+
+    <string name="exit">Bis zum nächsten Mal …</string>
+    <string name="setting">Rahmen</string>
+    <string name="setting_startup">Licht beim Start</string>
+    <string name="setting_term">Nutzungsbedingungen</string>
+    <string name="setting_privacy">Datenschutz-Bestimmungen</string>
+
+    <string name="alert_title">Speichern Sie Ihre Batterie</string>
+    <string name="alert_sub">Zu viele Apps kosten den Akku das Leben. Speichern</string>
+    <string name="alert_bt">sparen</string>
+    <string name="battery_title">Batteriesparmodus</string>
+    <string name="battery_sub">High Power Apps schließen</string>
+    <string name="battery_complete">Ihr Akku wurde gespeichert</string>
+
+    <string name="more_function">Mehr Funktion</string>
+    <string name="more_function_tools">Hilfsprogramme</string>
+    <string name="more_function_setting">Rahmen</string>
+    <string name="boost">steigern</string>
+    <string name="clean">Reinigen</string>
+    <string name="battery_saver">Batteriesparmodus</string>
+    <string name="cool">CPU Kühler</string>
+    <string name="network_optimization">Netzwerkoptimierung</string>
+
+
+    <!--    动画文案-->
+    <string name="save_battery_animation_1">App-Stromverbrauch wird erkannt…</string>
+    <string name="save_battery_animation_2">Systemeinstellungen erkennen…</string>
+    <string name="save_battery_animation_3">Anwendung ausschalten…</string>
+    <string name="save_battery_animation_4">Systemeinstellungen optimieren…</string>
+
+    <string name="cool_down_animation_1">Überprüfen der Speichernutzung…</string>
+    <string name="cool_down_animation_2">Batterieverbrauch prüfen…</string>
+    <string name="cool_down_animation_3">Überprüfen der CPU-Auslastung…</string>
+    <string name="cool_down_animation_4">Cache freigeben…</string>
+    <string name="cool_down_animation_5">Optimieren der CPU-Auslastung…</string>
+    <string name="cool_down_animation_6">Optimierung des Batterieverbrauchs…</string>
+
+
+    <!--完成信息提示-->
+    <string name="complete_info_cooldown">Die Temperatur wird um reduziert %1$d°C</string>
+    <string name="complete_info_booster">Leistung erhöht um %1$d%%</string>
+    <string name="complete_info_save_battery">Batteriedauer durch %1$d%%</string>
+    <string name="complete_info_storage">Lagerung gereinigt %1$dMB</string>
+    <string name="complete_info_network">Die Netzwerkgeschwindigkeit wird durch optimiert %d%%.</string>
+
+    <string name="complete_info_over">Glückwunsch! Fast bester Status.</string>
+    <string name="confirm_close_scene">Beim Ausschalten kann es Sie nicht daran erinnern, das Telefon zu optimieren, das System zu verbessern und so weiter. Sind Sie sicher, dass Sie das Gerät ausschalten möchten?</string>
+    <string name="cancel">stornieren</string>
+    <string name="ok">okay</string>
+    <string name="notification">Benachrichtigung</string>
+    <string name="rate_us">Bewerten Sie uns</string>
+    <string name="text_grade">Ihre Unterstützung ist die Kraft, unsere kontinuierliche Verbesserung voranzutreiben</string>
+    <string name="thanks_feedback">Vielen Dank für Ihr Feedback</string>
+
+    <!--    网络优化动画页文案-->
+    <string-array name="words_network">
+        <item>Testen des Netzwerkstatus…</item>
+        <item>Überprüfen der Netzwerkeinstellungen…</item>
+        <item>Erkennen von Apps im Netzwerk verbrauchen…</item>
+        <item>Stoppen von Apps für den Netzwerkverbrauch…</item>
+        <item>Systemeinstellungen optimieren…</item>
+        <item>Bin fertig</item>
+    </string-array>
+
+    <!--    降温页动画文案-->
+    <string-array name="words_cool">
+        <item>Überprüfen der Speichernutzung…</item>
+        <item>Batterieverbrauch prüfen…</item>
+        <item>Überprüfen der CPU-Auslastung…</item>
+        <item>Cache freigeben…</item>
+        <item>Optimieren der CPU-Auslastung…</item>
+        <item>Optimierung des Batterieverbrauchs…</item>
+        <item>Bin fertig</item>
+    </string-array>
+
+    <!--    电池优化文案-->
+    <string-array name="words_battery_optimize">
+        <item>Stromverbrauch der App wird erkannt…</item>
+        <item>Systemeinstellungen erkennen…</item>
+        <item>Anwendung ausschalten…</item>
+        <item>Systemeinstellungen optimieren…</item>
+        <item>Bin fertig</item>
+    </string-array>
+</resources>

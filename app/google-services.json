@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "996501979588",
+    "firebase_url": "https://super-versatile-flashlight.firebaseio.com",
+    "project_id": "super-versatile-flashlight",
+    "storage_bucket": "super-versatile-flashlight.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996501979588:android:2faae0eae9b0a86caee491",
+        "android_client_info": {
+          "package_name": "com.dema.versatile.flashlight"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996501979588-v7qvg90sj0q49gn9b89pln0a0o4md8op.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dema.versatile.flashlight",
+            "certificate_hash": "b15f84c0225c3500d5069c251ce9df91d8ceb45d"
+          }
+        },
+        {
+          "client_id": "996501979588-hfoe0fdaia9dmoqeg649o515kb9gi4sa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk2YlU0-JqQP3FpQrxXezVf-Hk55lFRmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996501979588-hfoe0fdaia9dmoqeg649o515kb9gi4sa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

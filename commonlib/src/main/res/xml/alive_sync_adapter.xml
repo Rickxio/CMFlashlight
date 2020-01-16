@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sync-adapter xmlns:n1="http://schemas.android.com/apk/res/android"
+    n1:accountType="@string/alive_account_type"
+    n1:allowParallelSyncs="false"
+    n1:contentAuthority="@string/alive_authority"
+    n1:isAlwaysSyncable="true"
+    n1:supportsUploading="false"
+    n1:userVisible="false" />

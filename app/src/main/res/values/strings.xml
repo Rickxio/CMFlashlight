@@ -1,0 +1,105 @@
+<resources>
+    <string name="app_name">Super versatile flashlight</string>
+    <string name="alive_account_type" translatable="false">com.dema.versatile.flashlight.cm.lib.alive.account</string>
+    <string name="alive_authority" translatable="false">com.dema.versatile.flashlight.cm.lib.alive.authority</string>
+
+    <string name="exit">See you next time …</string>
+    <string name="setting">Setting</string>
+    <string name="color_title">Screen light</string>
+    <string name="setting_startup">Light on startup</string>
+    <string name="setting_term">Terms of Service</string>
+    <string name="setting_privacy">Privacy Policy</string>
+
+    <string name="alert_title">Save your battery</string>
+    <string name="alert_sub">Too many apps are drawing your battery\'s life Save</string>
+    <string name="alert_bt">Save</string>
+    <string name="battery_title">Battery Saver</string>
+    <string name="battery_sub">Closing high power apps</string>
+    <string name="battery_complete">Your battery has been saved</string>
+
+    <string name="more_function">More Function</string>
+    <string name="more_function_tools">Utility Tools</string>
+    <string name="more_function_setting">Setting</string>
+    <string name="boost">Boost</string>
+    <string name="clean">Clean</string>
+    <string name="battery_saver">Battery Saver</string>
+    <string name="cool">CPU Cooler</string>
+    <string name="network_optimization">Network Optimization</string>
+
+
+    <!--    动画文案-->
+    <string name="save_battery_animation_1">Detecting app power consump…</string>
+    <string name="save_battery_animation_2">Detecting system settings…</string>
+    <string name="save_battery_animation_3">Powering off application…</string>
+    <string name="save_battery_animation_4">Optimizing system settings…</string>
+
+    <string name="cool_down_animation_1">Checking memory usage…</string>
+    <string name="cool_down_animation_2">Checking battery usage…</string>
+    <string name="cool_down_animation_3">Checking CPU usage…</string>
+    <string name="cool_down_animation_4">Releasing the cache…</string>
+    <string name="cool_down_animation_5">Optimizing CPU usage…</string>
+    <string name="cool_down_animation_6">Optimizing battery usage…</string>
+
+
+    <!--完成信息提示-->
+    <string name="complete_info_cooldown">Temperature is reduced by %1$d°C</string>
+    <string name="complete_info_booster">Performance increased by %1$d%%</string>
+    <string name="complete_info_save_battery">Battery endurance by %1$d%%</string>
+    <string name="complete_info_storage">Storage cleaned %1$dMB</string>
+    <string name="complete_info_network">The network speed is optimized by %d%%.</string>
+
+    <string name="complete_info_over">Congratulation! Almost best status.</string>
+    <string name="confirm_close_scene">When switch off, It can not remind you to optimize phone, boost system and so on in time. Are you sure to switch off?</string>
+    <string name="cancel">CANCEL</string>
+    <string name="ok">OK</string>
+    <string name="notification">Notification</string>
+    <string name="rate_us">Rate us</string>
+    <string name="text_grade">Your support is the power to drive our continuous improvement</string>
+    <string name="thanks_feedback">Thanks for your feedback</string>
+    <string name="about" >About</string>
+    <string name="open" >Open</string>
+    <string name="close" >Close</string>
+    <string name="version">Version %1$s</string>
+    <string name="fast_text">fast</string>
+    <string name="slow_text">slow</string>
+
+<!--    <string name="boost_text">Phone Boost</string>-->
+<!--    <string name="battery_saver_text">Battery Saver</string>-->
+<!--    <string name="cup_cooler_text">CPU Cooler</string>-->
+
+<!--    <string name="main_header_clean_text">Cleaner</string>-->
+    <string name="more_function_utlity_tools">Utlity Tools</string>
+    <string name="flashlight_setting">Setting</string>
+
+    <!--    网络优化动画页文案-->
+    <string-array name="words_network">
+        <item>Testing network status…</item>
+        <item>Checking network settings…</item>
+        <item>Detecting apps network consume…</item>
+        <item>Stopping network consume apps…</item>
+        <item>Optimizing system settings…</item>
+        <item>Have finished</item>
+    </string-array>
+
+    <!--    降温页动画文案-->
+    <string-array name="words_cool">
+        <item>Checking memory usage…</item>
+        <item>Checking battery usage…</item>
+        <item>Checking CPU usage…</item>
+        <item>Releasing the cache…</item>
+        <item>Optimizing CPU usage…</item>
+        <item>Optimizing battery usage…</item>
+        <item>Have finished</item>
+    </string-array>
+
+    <!--    电池优化文案-->
+    <string-array name="words_battery_optimize">
+        <item>Detecting app power consume…</item>
+        <item>Detecting system settings…</item>
+        <item>Powering off application…</item>
+        <item>Optimizing system settings…</item>
+        <item>Have finished</item>
+    </string-array>
+
+
+</resources>

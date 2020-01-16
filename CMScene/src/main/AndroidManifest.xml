@@ -1,0 +1,28 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dema.versatile.scene">
+
+    <application>
+        <activity
+            android:name=".ui.simple.CMAlertActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/ic_pull_drink"
+            android:label="Alert"
+            android:launchMode="singleInstance"
+            android:taskAffinity="cm.pull.alert"
+            android:theme="@style/alert" />
+        <activity
+            android:name=".ui.simple.CMTipsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/ic_pull_drink"
+            android:label="Tips"
+            android:launchMode="singleInstance"
+            android:taskAffinity="cm.tips.alert"
+            android:theme="@style/alert" />
+    </application>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--    <uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+</manifest>

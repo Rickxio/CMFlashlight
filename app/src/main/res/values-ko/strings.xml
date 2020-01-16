@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">슈퍼 LED 손전등</string>
+
+    <string name="exit">다음에 또 만나요 …</string>
+    <string name="setting">환경</string>
+    <string name="setting_startup">시작시 표시 등</string>
+    <string name="setting_term">서비스 약관</string>
+    <string name="setting_privacy">개인 정보 정책</string>
+
+    <string name="alert_title">배터리를 절약하십시오</string>
+    <string name="alert_sub">배터리 수명을 연장시키는 앱이 너무 많습니다</string>
+    <string name="alert_bt">저장하기</string>
+    <string name="battery_title">배터리 세이버</string>
+    <string name="battery_sub">고출력 앱 닫기</string>
+    <string name="battery_complete">배터리가 저장되었습니다</string>
+
+    <string name="more_function">더 많은 기능</string>
+    <string name="more_function_tools">유틸리티 도구</string>
+    <string name="more_function_setting">환경</string>
+    <string name="boost">후원</string>
+    <string name="clean">깨끗한</string>
+    <string name="battery_saver">배터리 세이버</string>
+    <string name="cool">CPU 쿨러</string>
+    <string name="network_optimization">네트워크 최적화</string>
+
+
+    <!--    动画文案-->
+    <string name="save_battery_animation_1">앱 전력 소비 감지…</string>
+    <string name="save_battery_animation_2">시스템 설정 감지…</string>
+    <string name="save_battery_animation_3">응용 프로그램 끄기…</string>
+    <string name="save_battery_animation_4">시스템 설정 최적화…</string>
+
+    <string name="cool_down_animation_1">메모리 사용량 확인…</string>
+    <string name="cool_down_animation_2">배터리 사용량 확인…</string>
+    <string name="cool_down_animation_3">CPU 사용량 확인…</string>
+    <string name="cool_down_animation_4">캐시 해제…</string>
+    <string name="cool_down_animation_5">CPU 사용량 최적화…</string>
+    <string name="cool_down_animation_6">배터리 사용 최적화…</string>
+
+
+    <!--完成信息提示-->
+    <string name="complete_info_cooldown">온도가 %1$d°C</string>
+    <string name="complete_info_booster">성능 향상 %1$d%%</string>
+    <string name="complete_info_save_battery">배터리 내구성 %1$d%%</string>
+    <string name="complete_info_storage">보관소 청소 %1$dMB</string>
+    <string name="complete_info_network">네트워크 속도는 %d%%.</string>
+
+    <string name="complete_info_over">축하합니다! 거의 최고의 상태입니다.</string>
+    <string name="confirm_close_scene">스위치를 끄면 전화를 최적화하고 시스템을 향상시키는 등의 시간을 알려주지 않습니다. 끄시겠습니까?</string>
+    <string name="cancel">취소</string>
+    <string name="ok">승인</string>
+    <string name="notification">공고</string>
+    <string name="rate_us">우리를 평가</string>
+    <string name="text_grade">귀하의 지원은 지속적인 개선을 이끄는 힘입니다</string>
+    <string name="thanks_feedback">의견 주셔서 감사합니다</string>
+
+    <!--    网络优化动画页文案-->
+    <string-array name="words_network">
+        <item>네트워크 상태 테스트…</item>
+        <item>네트워크 설정 확인…</item>
+        <item>앱 네트워크 소비 감지…</item>
+        <item>네트워크 소비 앱 중지…</item>
+        <item>시스템 설정 최적화…</item>
+        <item>끝냈습니다</item>
+    </string-array>
+
+    <!--    降温页动画文案-->
+    <string-array name="words_cool">
+        <item>메모리 사용량 확인…</item>
+        <item>배터리 사용량 확인…</item>
+        <item>CPU 사용량 확인…</item>
+        <item>캐시 해제…</item>
+        <item>CPU 사용량 최적화…</item>
+        <item>배터리 사용 최적화…</item>
+        <item>끝냈습니다</item>
+    </string-array>
+
+    <!--    电池优化文案-->
+    <string-array name="words_battery_optimize">
+        <item>앱 전력 소비 감지…</item>
+        <item>시스템 설정 감지…</item>
+        <item>응용 프로그램 끄기…</item>
+        <item>시스템 설정 최적화…</item>
+        <item>끝냈습니다</item>
+    </string-array>
+</resources>

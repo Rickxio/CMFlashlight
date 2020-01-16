@@ -1,0 +1,16 @@
+[submodule "CMLib"]
+	path = CMLib
+	url = git@39.105.109.116:wangyu/CMLib.git
+	branch = app-rel
+[submodule "CMMediation"]
+	path = CMMediation
+	url = git@39.105.109.116:wangyu/CMMediation.git
+	branch = app-rel
+[submodule "CMLogic"]
+	path = CMLogic
+	url = git@39.105.109.116:root/CMLogic.git
+	branch = app-rel
+[submodule "CMScene"]
+	path = CMScene
+	url = git@39.105.109.116:wangyu/CMScene.git
+	branch = app-alert

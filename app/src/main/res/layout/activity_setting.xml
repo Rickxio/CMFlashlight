@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/icon_back">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/setting"
+            android:textColor="#cccccc"
+            android:textSize="@dimen/toolbar_title" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="60dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="17dp"
+                android:text="@string/more_function_utlity_tools"
+                android:textColor="@color/s_color"
+                android:textSize="12dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/line_bg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/tv_boost"
+                    style="@style/MoreItemTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/more_boost"
+                    android:text="@string/boost" />
+
+                <TextView
+                    android:id="@+id/tv_clean"
+                    style="@style/MoreItemTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/more_clean"
+                    android:text="@string/clean" />
+
+                <TextView
+                    android:id="@+id/tv_battery"
+                    style="@style/MoreItemTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/more_battery"
+                    android:text="@string/battery_saver" />
+
+                <TextView
+                    android:id="@+id/tv_cooler"
+                    style="@style/MoreItemTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/more_cooler"
+                    android:text="@string/cool" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:weightSum="4"
+
+                >
+
+                <TextView
+                    android:id="@+id/tv_network"
+                    style="@style/MoreItemTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/more_icon_wifi"
+                    android:text="@string/network_optimization" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/flashlight_setting"
+                android:textColor="@color/s_color"
+                android:textSize="12dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/line_bg" />
+
+            <RelativeLayout
+                android:id="@+id/rl_startup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/setting_item_height"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    style="@style/settingTextStyle"
+                    android:drawableStart="@drawable/icon_light"
+                    android:text="@string/setting_startup" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sc_startup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/setting_item_switch_margin_x"
+                    android:layout_marginRight="@dimen/setting_item_switch_margin_x"
+                    app:theme="@style/SwitchTheme" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_notification"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/setting_item_height">
+
+                <TextView
+                    style="@style/settingTextStyle"
+                    android:drawableStart="@drawable/ic_notification"
+                    android:text="@string/notification" />
+
+              <!--  <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="19dp"
+                    android:src="@drawable/ic_right_arrow" />-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_rateus"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/setting_item_height">
+
+                <TextView
+                    style="@style/settingTextStyle"
+                    android:drawableStart="@drawable/ic_rate"
+                    android:text="@string/rate_us" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="19dp"
+                    android:src="@drawable/ic_right_arrow" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_term"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/setting_item_height">
+
+                <TextView
+                    style="@style/settingTextStyle"
+                    android:drawableStart="@drawable/icon_service"
+                    android:text="@string/setting_term" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_privacy"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/setting_item_height">
+
+                <TextView
+                    style="@style/settingTextStyle"
+                    android:drawableStart="@drawable/icon_policy"
+                    android:text="@string/setting_privacy" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_about"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/setting_item_height">
+
+                <TextView
+                    style="@style/settingTextStyle"
+                    android:drawableStart="@drawable/ic_about"
+                    android:text="@string/about" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

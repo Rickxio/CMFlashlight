@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.dema.versatile.flashlight"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0.1"
+        flavorDimensions "versionCode"
+        /*ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'    //只生成armv7的so
+        }*/
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('flashlight')
+            storePassword 'dema2019'
+            keyAlias 'key0'
+            keyPassword 'dema2019'
+        }
+        release {
+            storeFile file('flashlight')
+            storePassword 'dema2019'
+            keyAlias 'key0'
+            keyPassword 'dema2019'
+        }
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "flashlight_V${variant.versionCode}_${variant.buildType.name}_${releaseTime()}.apk"
+        }
+    }
+    productFlavors {
+        GP {
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+static def releaseTime() {
+    return new Date().format("yyyy-MM-dd_HH-mm-ss")
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':commonlib')
+    implementation project(':CMMediation')
+    implementation project(':CMLogic')
+    implementation project(path: ':CMScene')
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.airbnb.android:lottie:3.0.7'
+    implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    api 'com.jakewharton:butterknife:10.2.0'
+}
+apply plugin: 'com.google.gms.google-services'
