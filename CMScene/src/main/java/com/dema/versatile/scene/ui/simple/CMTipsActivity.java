@@ -76,7 +76,7 @@ public class CMTipsActivity extends CMAlertBaseActivity {
         if (mIMediationMgr == null) {
             mIMediationMgr = CMMediationFactory.getInstance().createInstance(IMediationMgr.class);
         }
-        mIMediationMgr.showAdView(getAdKey(), mFlAd);
+        mIMediationMgr.showAdView(getAdKey(), mFlAd, getApplicationContext());
         if (mISceneMgr.getCallBack() != null) {
             mISceneMgr.getCallBack().onAlertShow(mAlertInfoBean);
         }

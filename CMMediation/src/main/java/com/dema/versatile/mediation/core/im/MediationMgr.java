@@ -1,5 +1,8 @@
 package com.dema.versatile.mediation.core.im;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Size;
@@ -171,6 +174,8 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
 
                 mMapAdRequestIndex.put(strKeyTime, mMapAdRequestIndex.get(strKeyTime) + 1);
 
+
+
                 // 检查无效流量
                 if (UtilsAd.isSpamUser(CMMediationFactory.getApplication(), iMediationConfig.getAdKey(), iAdItem.getAdPlatform(), iAdItem.getAdID(), iAdItem.getAdType()))
                     continue;
@@ -222,12 +227,12 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
     }
 
     @Override
-    public boolean showAdView(String strKey, ViewGroup VGContainer) {
-        return showAdView(strKey, VGContainer, null);
+    public boolean showAdView(String strKey, ViewGroup VGContainer, Context context) {
+        return showAdView(strKey, VGContainer, null, context);
     }
 
     @Override
-    public boolean showAdView(String strKey, ViewGroup VGContainer, int[] arrayResLayoutID) {
+    public boolean showAdView(String strKey, ViewGroup VGContainer, int[] arrayResLayoutID, Context context) {
         if (TextUtils.isEmpty(strKey) || null == VGContainer)
             return false;
 
@@ -262,6 +267,18 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
         if (null == iAdPlatformMgr)
             return false;
 
+        String strAdID = adBean.mIAdItem.getAdID();
+        UtilsAd.log("showAdView:"+strAdID, null);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        long lastAdTime = sp.getLong(strAdID, 0);
+        long lTime = System.currentTimeMillis();
+        //屏蔽无效流量，相同广告id展示频率不能小于6s
+        if(lTime - lastAdTime < 6000){
+            return false;
+        } else{
+            sp.edit().putLong(strAdID, lTime).apply();
+        }
+
         switch (adBean.mIAdItem.getAdType()) {
             case IMediationConfig.VALUE_STRING_TYPE_BANNER:
                 return iAdPlatformMgr.showBannerAd(adBean, VGContainer);
@@ -273,7 +290,7 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
     }
 
     @Override
-    public boolean showInterstitialAd(String strKey, String strScene) {
+    public boolean showInterstitialAd(String strKey, String strScene, Context context) {
         if (TextUtils.isEmpty(strKey) || TextUtils.isEmpty(strScene))
             return false;
 
@@ -304,12 +321,28 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
         }
 
         String strPlatform = adBean.mIAdItem.getAdPlatform();
+
+
+
+
         if (TextUtils.isEmpty(strPlatform))
             return false;
 
         IAdPlatformMgr iAdPlatformMgr = mMapAdPlatformMgr.get(strPlatform);
         if (null == iAdPlatformMgr)
             return false;
+
+        String strAdID = adBean.mIAdItem.getAdID();
+        UtilsAd.log("showInterstitialAd:"+strAdID, null);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        long lastAdTime = sp.getLong(strAdID, 0);
+        long lTime = System.currentTimeMillis();
+        //屏蔽无效流量，相同广告id展示频率不能小于6s
+        if(lTime - lastAdTime < 6000){
+            return false;
+        } else{
+            sp.edit().putLong(strAdID, lTime).apply();
+        }
 
         return iAdPlatformMgr.showInterstitialAd(adBean);
     }

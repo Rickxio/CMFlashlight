@@ -81,7 +81,7 @@ public class AnimActivity extends BaseActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 ResultActivity.start(AnimActivity.this, mFunctionType);
-                mMediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, AdKey.VALUE_STRING_AD_SHOW_SCENE_ANIMATION_COMPLETE);
+                mMediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, AdKey.VALUE_STRING_AD_SHOW_SCENE_ANIMATION_COMPLETE, getApplicationContext());
                 finish();
             }
 
@@ -233,7 +233,7 @@ public class AnimActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        mMediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, AdKey.VALUE_STRING_AD_SHOW_SCENE_ANIMATION_CANCEL);
+        mMediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, AdKey.VALUE_STRING_AD_SHOW_SCENE_ANIMATION_CANCEL, getApplicationContext());
 
     }
 }

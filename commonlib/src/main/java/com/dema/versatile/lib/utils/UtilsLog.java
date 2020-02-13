@@ -119,12 +119,12 @@ public class UtilsLog {
     }
 
     public static void log(String strKey1, String strKey2, JSONObject jsonObjectContent) {
-        Log.d("superlog", "sIsNeedLocalLog-1 = "+sIsNeedLocalLog);
+
         if (sIsNeedSendLog) {
             ICMLog iCMLog = CMLibFactory.getInstance().createInstance(ICMLog.class);
             iCMLog.log(strKey1, strKey2, jsonObjectContent);
         }
-        Log.d("superlog", "sIsNeedLocalLog-2 = "+sIsNeedLocalLog);
+
         logD("superlog", "---\n" + "c1:" + strKey1 + "\n" +
                 "c2:" + (TextUtils.isEmpty(strKey2) ? "null" : strKey2) + "\n" +
                 "c3:" + (null == jsonObjectContent ? "null" : jsonObjectContent.toString()));

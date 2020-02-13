@@ -1,5 +1,6 @@
 package com.dema.versatile.mediation.core.in;
 
+import android.content.Context;
 import android.util.Size;
 import android.view.ViewGroup;
 
@@ -26,14 +27,14 @@ public interface IMediationMgr extends ICMMgr, ICMObserver<IMediationMgrListener
     boolean requestAdAsync(String strKey, String strScene, int[] arrayResLayoutID, Size size);
 
     // 默认展示
-    boolean showAdView(String strKey, ViewGroup VGContainer);
+    boolean showAdView(String strKey, ViewGroup VGContainer, Context context);
 
     /*
         arrayResLayoutID: Admob/Facebook自定义Native展示
      */
-    boolean showAdView(String strKey, ViewGroup VGContainer, int[] arrayResLayoutID);
+    boolean showAdView(String strKey, ViewGroup VGContainer, int[] arrayResLayoutID, Context context);
 
-    boolean showInterstitialAd(String strKey, String strScene);
+    boolean showInterstitialAd(String strKey, String strScene, Context context);
 
     boolean releaseAd(String strKey);
 

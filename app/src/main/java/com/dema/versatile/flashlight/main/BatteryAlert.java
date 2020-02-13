@@ -50,6 +50,6 @@ public class BatteryAlert extends AppCompatActivity {
         });
         FrameLayout flAd = findViewById(R.id.fl_ad);
         IMediationMgr instance = CMMediationFactory.getInstance().createInstance(IMediationMgr.class);
-        instance.showAdView(AdKey.VALUE_STRING_VIEW_ALERT, flAd);
+        instance.showAdView(AdKey.VALUE_STRING_VIEW_ALERT, flAd, getApplicationContext());
     }
 }

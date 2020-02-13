@@ -80,7 +80,7 @@ public class CMAlertActivity extends CMAlertBaseActivity {
         mIMediationMgr = CMMediationFactory.getInstance().createInstance(IMediationMgr.class);
         findId();
         setContent();
-        mIMediationMgr.showAdView(getAdKey(), mFlAd);
+        mIMediationMgr.showAdView(getAdKey(), mFlAd, getApplicationContext());
         if (mISceneMgr.getCallBack() != null) {
             mISceneMgr.getCallBack().onAlertShow(mAlertInfoBean);
         }

@@ -100,7 +100,7 @@ public class ResultActivity extends BaseActivity {
     public void onBackPressed() {
         super.onBackPressed();
         IMediationMgr mediationMgr = CMMediationFactory.getInstance().createInstance(IMediationMgr.class);
-        mediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, AdKey.VALUE_STRING_AD_SHOW_SCENE_RESULT_BACK);
+        mediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, AdKey.VALUE_STRING_AD_SHOW_SCENE_RESULT_BACK, getApplicationContext());
     }
 
     @Override

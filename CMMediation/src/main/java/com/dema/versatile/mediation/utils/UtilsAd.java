@@ -84,11 +84,33 @@ public class UtilsAd {
 
         String strTimeKey = "spam_" + strAdPlatform + "_time";
         String strClickKey = "spam_" + strAdPlatform + "_click";
+        String strAdIDTimeKey = "spam_" + strAdID + "_time";
+
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         long lTime = System.currentTimeMillis();
         long lLastTime = sp.getLong(strTimeKey, 0);
         int nClickCount = sp.getInt(strClickKey, 0);
-        if (lTime - lLastTime < 20 || 0 == lLastTime) {
+        long lLastAdIDTime = sp.getLong(strAdIDTimeKey, 0);
+
+        long adtime = lTime - lLastAdIDTime;
+
+
+        JSONObject jo = new JSONObject();
+        UtilsJson.JsonSerialization(jo, "key", strAdKey);
+        UtilsJson.JsonSerialization(jo, "type", strAdType);
+        UtilsJson.JsonSerialization(jo, "ad_id", strAdID);
+        UtilsJson.JsonSerialization(jo, "lTime - lLastAdIDTime ", adtime+" = "+lTime+"-"+lLastAdIDTime);
+        UtilsJson.JsonSerialization(jo, " Thread ",  Thread.currentThread().getId());
+        UtilsLog.log("spam", strAdPlatform, jo);
+
+        //屏蔽无效流量，相同广告id请求频率不能小于6s
+        if(adtime < 6000){
+            return true;
+        } else {
+            sp.edit().putLong(strAdIDTimeKey, lTime).apply();
+        }
+
+        if (lTime < lLastTime || 0 == lLastTime) {
             lLastTime = lTime;
             sp.edit().putLong(strTimeKey, lTime).apply();
         }

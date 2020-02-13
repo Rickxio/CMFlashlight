@@ -63,7 +63,7 @@ public class BatteryActivity extends BaseActivity {
         mIMediationMgr.requestAdAsync(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, "battery");
         initTvAnim();
         startLottieAnim("battery", animator -> {
-            mHasShowAd = mIMediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, "complete");
+            mHasShowAd = mIMediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, "complete", getApplicationContext());
             if (!mHasShowAd) {
                 startLottieAnim("complete", null);
                 mHasComplete = true;
@@ -141,7 +141,7 @@ public class BatteryActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        mIMediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, "quit");
+        mIMediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_RESULT, "quit", getApplicationContext());
         super.onBackPressed();
     }
 

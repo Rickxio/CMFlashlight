@@ -251,14 +251,14 @@ public class MainActivity extends BaseActivity {
                     return;
 
                 if (AdKey.VALUE_STRING_VIEW_MAIN.equals(iMediationConfig.getAdKey())) {
-                    mIMediationMgr.showAdView(AdKey.VALUE_STRING_VIEW_MAIN, mFlAd);
+                    mIMediationMgr.showAdView(AdKey.VALUE_STRING_VIEW_MAIN, mFlAd, getApplicationContext());
                 }
             }
         };
         mIMediationMgr.addListener(mIMediationMgrListener);
 
         if (mIMediationMgr.isAdLoaded(AdKey.VALUE_STRING_VIEW_MAIN)) {
-            mIMediationMgr.showAdView(AdKey.VALUE_STRING_VIEW_MAIN, mFlAd);
+            mIMediationMgr.showAdView(AdKey.VALUE_STRING_VIEW_MAIN, mFlAd, getApplicationContext());
         }
     }
 
@@ -378,7 +378,7 @@ public class MainActivity extends BaseActivity {
     public void onBackPressed() {
         Intent intent = new Intent(this, ExitActivity.class);
         startActivity(intent);
-        mIMediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_EXIT, AdKey.VALUE_STRING_AD_SHOW_SCENE_MAIN_EXIT);
+        mIMediationMgr.showInterstitialAd(AdKey.VALUE_STRING_INTERSTITIAL_EXIT, AdKey.VALUE_STRING_AD_SHOW_SCENE_MAIN_EXIT, getApplicationContext());
         super.onBackPressed();
     }
 
