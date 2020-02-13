@@ -88,7 +88,7 @@ public class UtilsAd {
         long lTime = System.currentTimeMillis();
         long lLastTime = sp.getLong(strTimeKey, 0);
         int nClickCount = sp.getInt(strClickKey, 0);
-        if (lTime < lLastTime || 0 == lLastTime) {
+        if (lTime - lLastTime < 20 || 0 == lLastTime) {
             lLastTime = lTime;
             sp.edit().putLong(strTimeKey, lTime).apply();
         }

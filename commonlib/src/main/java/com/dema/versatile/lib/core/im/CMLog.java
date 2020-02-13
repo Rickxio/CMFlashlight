@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.dema.versatile.lib.CMLibFactory;
 import com.dema.versatile.lib.core.in.ICMHttp;
@@ -27,6 +28,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+import static com.dema.versatile.lib.utils.UtilsLog.logD;
 
 public class CMLog implements ICMLog {
     private Context mContext = null;

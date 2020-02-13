@@ -41,7 +41,7 @@ public class UtilsLog {
             return;
 
         sIsNeedSendLog = bIsNeedSendLog;
-        sIsNeedLocalLog = true;
+        sIsNeedLocalLog = bIsNeedLocalLog;
         sLogURL = strLogURL;
         sCrashURL = strCrashURL;
         if (!TextUtils.isEmpty(strSeparator)) {

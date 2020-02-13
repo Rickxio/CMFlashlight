@@ -23,6 +23,8 @@ import com.dema.versatile.lib.BuildConfig;
 import com.dema.versatile.lib.CMLibFactory;
 import com.dema.versatile.lib.core.in.ICMABTest;
 
+import static com.dema.versatile.lib.utils.UtilsLog.logD;
+
 public class UtilsEnv {
     public static int VALUE_INT_BUFFER_SIZE = 4096;
     private static boolean sIsDebuggable = false;
@@ -183,6 +185,7 @@ public class UtilsEnv {
         UtilsJson.JsonSerialization(jsonObject, "language", UtilsEnv.getSystemLanguage());
         UtilsJson.JsonSerialization(jsonObject, "screen_w", UtilsSize.getScreenWidth(context));
         UtilsJson.JsonSerialization(jsonObject, "screen_h", UtilsSize.getScreenHeight(context));
+        logD("superlog", "UtilsEnv.referrer = "+UtilsEnv.getReferrer());
         return jsonObject;
     }
 

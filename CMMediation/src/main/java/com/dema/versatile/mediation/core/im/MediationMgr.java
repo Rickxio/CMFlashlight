@@ -120,7 +120,7 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
     }
 
     @Override
-    public boolean requestAdAsync(String strKey, String strScene, int[] arrayResLayoutID, Size size) {
+    public  boolean  requestAdAsync(String strKey, String strScene, int[] arrayResLayoutID, Size size) {
         if (TextUtils.isEmpty(strKey) || TextUtils.isEmpty(strScene))
             return false;
 
@@ -157,45 +157,49 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
         return bResult;
     }
 
-    private boolean requestAd(IMediationConfig iMediationConfig, String strKeyTime, int[] arrayResLayoutID, Size size) {
+    private boolean  requestAd(IMediationConfig iMediationConfig, String strKeyTime, int[] arrayResLayoutID, Size size) {
         UtilsAd.logE("rick-requestAd-逻辑", Log.getStackTraceString(new Exception()));
-        if (null == iMediationConfig || TextUtils.isEmpty(strKeyTime) || !mMapAdRequestIndex.containsKey(strKeyTime))
+        if (null == iMediationConfig || TextUtils.isEmpty(strKeyTime) || !mMapAdRequestIndex.containsKey(strKeyTime) || iMediationConfig.getAdKey() == null)
             return false;
         UtilsAd.logE("rick-requestAd-逻辑-1",iMediationConfig.getAdKey() );
-        boolean bResult = false;
-        while (true) {
-            IAdItem iAdItem = iMediationConfig.getAdItem(mMapAdRequestIndex.get(strKeyTime));
-            if (null == iAdItem)
-                break;
-
-            mMapAdRequestIndex.put(strKeyTime, mMapAdRequestIndex.get(strKeyTime) + 1);
-
-            // 检查无效流量
-            if (UtilsAd.isSpamUser(CMMediationFactory.getApplication(), iMediationConfig.getAdKey(), iAdItem.getAdPlatform(), iAdItem.getAdID(), iAdItem.getAdType()))
-                continue;
-
-            // 若有不支持的广告变现平台直接跳到下一个AdItem广告请求
-            IAdPlatformMgr iAdPlatformMgr = mMapAdPlatformMgr.get(iAdItem.getAdPlatform());
-            if (null == iAdPlatformMgr)
-                continue;
-
-            switch (iAdItem.getAdType()) {
-                case IMediationConfig.VALUE_STRING_TYPE_BANNER:
-                    bResult = iAdPlatformMgr.requestBannerAdAsync(iMediationConfig.getAdKey(), iAdItem.getAdID(), iAdItem.getAdBannerSize(), size, new AdPlatformListener(iMediationConfig, iAdItem, strKeyTime, arrayResLayoutID, size));
+        synchronized(iMediationConfig.getAdKey()){
+            boolean bResult = false;
+            while (true) {
+                IAdItem iAdItem = iMediationConfig.getAdItem(mMapAdRequestIndex.get(strKeyTime));
+                if (null == iAdItem)
                     break;
-                case IMediationConfig.VALUE_STRING_TYPE_NATIVE:
-                    bResult = iAdPlatformMgr.requestNativeAdAsync(iMediationConfig.getAdKey(), iAdItem.getAdID(), arrayResLayoutID, new AdPlatformListener(iMediationConfig, iAdItem, strKeyTime, arrayResLayoutID, size));
-                    break;
-                case IMediationConfig.VALUE_STRING_TYPE_INTERSTITIAL:
-                    bResult = iAdPlatformMgr.requestInterstitialAdAsync(iMediationConfig.getAdKey(), iAdItem.getAdID(), new AdPlatformListener(iMediationConfig, iAdItem, strKeyTime, arrayResLayoutID, size));
+
+                mMapAdRequestIndex.put(strKeyTime, mMapAdRequestIndex.get(strKeyTime) + 1);
+
+                // 检查无效流量
+                if (UtilsAd.isSpamUser(CMMediationFactory.getApplication(), iMediationConfig.getAdKey(), iAdItem.getAdPlatform(), iAdItem.getAdID(), iAdItem.getAdType()))
+                    continue;
+
+                // 若有不支持的广告变现平台直接跳到下一个AdItem广告请求
+                IAdPlatformMgr iAdPlatformMgr = mMapAdPlatformMgr.get(iAdItem.getAdPlatform());
+                if (null == iAdPlatformMgr)
+                    continue;
+
+                switch (iAdItem.getAdType()) {
+                    case IMediationConfig.VALUE_STRING_TYPE_BANNER:
+                        bResult = iAdPlatformMgr.requestBannerAdAsync(iMediationConfig.getAdKey(), iAdItem.getAdID(), iAdItem.getAdBannerSize(), size, new AdPlatformListener(iMediationConfig, iAdItem, strKeyTime, arrayResLayoutID, size));
+                        break;
+                    case IMediationConfig.VALUE_STRING_TYPE_NATIVE:
+                        bResult = iAdPlatformMgr.requestNativeAdAsync(iMediationConfig.getAdKey(), iAdItem.getAdID(), arrayResLayoutID, new AdPlatformListener(iMediationConfig, iAdItem, strKeyTime, arrayResLayoutID, size));
+                        break;
+                    case IMediationConfig.VALUE_STRING_TYPE_INTERSTITIAL:
+                        bResult = iAdPlatformMgr.requestInterstitialAdAsync(iMediationConfig.getAdKey(), iAdItem.getAdID(), new AdPlatformListener(iMediationConfig, iAdItem, strKeyTime, arrayResLayoutID, size));
+                        break;
+                }
+
+                if (bResult)
                     break;
             }
 
-            if (bResult)
-                break;
+            return bResult;
         }
 
-        return bResult;
+
     }
 
     private int getMediationRequestAndLoadedCount(IMediationConfig iMediationConfig) {
