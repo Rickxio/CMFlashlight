@@ -30,6 +30,7 @@ import com.dema.versatile.flashlight.main.view.StrobeRecyclerView;
 import com.dema.versatile.flashlight.main.view.VerticalSeekBar;
 import com.dema.versatile.flashlight.utils.UtilsAnimator;
 import com.dema.versatile.flashlight.utils.UtilsSetting;
+import com.dema.versatile.lib.utils.UtilsJson;
 import com.dema.versatile.lib.utils.UtilsLog;
 import com.dema.versatile.lib.utils.UtilsSize;
 import com.dema.versatile.lib.utils.UtilsTime;
@@ -41,6 +42,8 @@ import com.dema.versatile.mediation.utils.UtilsAd;
 import com.dema.versatile.scene.core.CMSceneFactory;
 import com.dema.versatile.scene.core.alert.AlertMgrImpl;
 import com.dema.versatile.scene.core.alert.IAlertMgr;
+
+import org.json.JSONObject;
 
 public class MainActivity extends BaseActivity {
     public static final String EXTRA_SCENE = "scene";
@@ -69,6 +72,7 @@ public class MainActivity extends BaseActivity {
     private VerticalSeekBar verticalSeekBar;
     private RelativeLayout fight_main;
     private RelativeLayout main_flash;
+    private String lclickSwitch = "close";
 
     private void startSceneActivity() {
         String scene = getIntent().getStringExtra(EXTRA_SCENE);
@@ -134,11 +138,13 @@ public class MainActivity extends BaseActivity {
         registered_rate();
 
         mBtColor.setOnClickListener(v -> {
+            UtilsLog.log("main", "color", null);
             Intent intent = new Intent(MainActivity.this, ColorActivity.class);
             startActivity(intent);
         });
 
         mBtSetting.setOnClickListener(v -> {
+            UtilsLog.log("main", "setting", null);
             Intent intent = new Intent(MainActivity.this, SettingActivity.class);
             startActivity(intent);
         });
@@ -146,6 +152,14 @@ public class MainActivity extends BaseActivity {
         mIvSos.setOnClickListener(v -> {
             mIFlashlightMgr.changeRVState(FlashlightMgrImpl.VALUE_INT_SOS);
             boolean clickSwitch = mIFlashlightMgr.clickSwitch();
+            if(clickSwitch){
+                lclickSwitch = "open";
+            } else {
+                lclickSwitch = "close";
+            }
+            JSONObject object = new JSONObject();
+            UtilsJson.JsonSerialization(object,"status",lclickSwitch);
+            UtilsLog.log("main", "sos", object);
             updateSosUI(clickSwitch);
         });
 
@@ -154,7 +168,7 @@ public class MainActivity extends BaseActivity {
 //            startActivity(new Intent(this,LightActivity.class));
             main_flash.setVisibility(View.VISIBLE);
             fight_main.setVisibility(View.GONE);
-
+            UtilsLog.log("main", "Light", null);
             mIFlashlightMgr.setSwitchState(true);
             mIvSwitch.setImageResource(R.drawable.ic_close);
             mIvSos.setImageResource(R.drawable.ic_sos);
@@ -256,6 +270,14 @@ public class MainActivity extends BaseActivity {
         mIvSwitch.setOnClickListener(v -> {
             mIFlashlightMgr.setLevel(0);
             boolean switchState = mIFlashlightMgr.clickSwitch();
+            if(switchState){
+                lclickSwitch = "open";
+            } else {
+                lclickSwitch = "close";
+            }
+            JSONObject object = new JSONObject();
+            UtilsJson.JsonSerialization(object,"status",lclickSwitch);
+            UtilsLog.log("main", "Switch", object);
             updateSwitchUI(switchState);
             if (!switchState) {
                 int count = settingMgr.addCloseCount();
