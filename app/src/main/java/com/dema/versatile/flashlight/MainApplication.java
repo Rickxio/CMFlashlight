@@ -29,7 +29,7 @@ import org.json.JSONObject;
 public class MainApplication extends CMApplication {
     @Override
     protected void initApplication() {
-        UtilsLogic.sDomain = "api.shalacai.com:1224";
+        UtilsLogic.sDomain = "api.shalacai.com:9999";
         UtilsLogic.sKeySecret = "a94f1167a8142ba2769d70144b409f";
         UtilsLogic.sConfigURL = "/config";
         UtilsLogic.sCountryURL = "";
@@ -39,6 +39,9 @@ public class MainApplication extends CMApplication {
         // 使用应用级BuildConfig
         UtilsLogic.sChannel = BuildConfig.FLAVOR;
         UtilsLogic.sIsDebug = BuildConfig.DEBUG;
+        if(!UtilsLogic.sIsDebug){
+            UtilsLogic.sDomain = "api.shalacai.com:1223";
+        }
 
       /*  RequestManager.registerConfig(new NetConfig() {
             @Override

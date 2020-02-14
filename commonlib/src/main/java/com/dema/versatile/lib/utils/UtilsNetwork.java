@@ -8,6 +8,8 @@ import android.text.TextUtils;
 
 import org.json.JSONObject;
 
+import static com.dema.versatile.lib.utils.UtilsLog.logD;
+
 public class UtilsNetwork {
     public static final int VALUE_INT_FAIL_CODE = -1;
     public static final int VALUE_INT_SUCCESS_CODE = 1;
@@ -79,8 +81,9 @@ public class UtilsNetwork {
     public static String getURL(String strURL) {
         if (TextUtils.isEmpty(strURL))
             return null;
-
-        return getURL() + (strURL.startsWith("/") ? strURL : "/" + strURL);
+        String url = getURL() + (strURL.startsWith("/") ? strURL : "/" + strURL);
+        logD("superlog", "getURL= "+url);
+        return url;
     }
 
     public static JSONObject getBasicRequestParam(Context context) {
