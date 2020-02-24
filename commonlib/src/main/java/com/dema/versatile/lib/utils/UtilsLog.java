@@ -119,15 +119,17 @@ public class UtilsLog {
     }
 
     public static void log(String strKey1, String strKey2, JSONObject jsonObjectContent) {
-
+        long t = System.currentTimeMillis();
         if (sIsNeedSendLog) {
             ICMLog iCMLog = CMLibFactory.getInstance().createInstance(ICMLog.class);
-            iCMLog.log(strKey1, strKey2, jsonObjectContent);
+            iCMLog.log(strKey1, strKey2, jsonObjectContent, t);
         }
 
         logD("superlog", "---\n" + "c1:" + strKey1 + "\n" +
                 "c2:" + (TextUtils.isEmpty(strKey2) ? "null" : strKey2) + "\n" +
-                "c3:" + (null == jsonObjectContent ? "null" : jsonObjectContent.toString()));
+                "c3:" + (null == jsonObjectContent ? "null" : jsonObjectContent.toString())+"\n"+
+                "time:"+t
+                );
     }
 
     public static void crash(Throwable throwable) {
@@ -142,8 +144,6 @@ public class UtilsLog {
     public static void send() {
         ICMLog iCMLog = CMLibFactory.getInstance().createInstance(ICMLog.class);
         iCMLog.send();
-
-        logD("superlog", "send log");
     }
 
     public static void logD(String strTag, String strLog) {

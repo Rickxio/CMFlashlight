@@ -78,6 +78,33 @@ public class CMLog implements ICMLog {
     }
 
     @Override
+    public void log(final String strKey1, final String strKey2, final JSONObject jsonObjectContent, Long time) {
+        if (TextUtils.isEmpty(strKey1))
+            return;
+
+        mICMThreadPool.run(new ICMThreadPoolListener() {
+            @Override
+            public void onRun() {
+                JSONObject jsonObject = new JSONObject();
+                UtilsJson.JsonSerialization(jsonObject, "key1", strKey1);
+                UtilsJson.JsonSerialization(jsonObject, "key2", strKey2);
+                UtilsJson.JsonSerialization(jsonObject, "content", jsonObjectContent);
+                UtilsJson.JsonSerialization(jsonObject, "network", UtilsNetwork.getNetworkType(mContext));
+                UtilsJson.JsonSerialization(jsonObject, "date", UtilsTime.getDateStringYyyyMmDdHhMmSs(time));
+                UtilsJson.JsonSerialization(jsonObject, "time", time);
+                UtilsJson.JsonSerialization(jsonObject, "basic", UtilsEnv.getBasicInfo(mContext));
+                UtilsJson.JsonSerialization(jsonObject, "ab_test", UtilsEnv.getABTestID());
+                UtilsJson.JsonSerialization(jsonObject, "extend", UtilsEnv.getExtendInfo());
+                String strData = jsonObject.toString();
+                /*logD("superlog", "---\n" + "write-c1:" + strKey1 + "\n" +
+                        "write-c2:" + (TextUtils.isEmpty(strKey2) ? "null" : strKey2) + "\n" +
+                        "write-c3:" + strData);*/
+                write(VALUE_INT_LOG_TYPE, strData);
+            }
+        });
+    }
+
+    @Override
     public void crash(final Throwable throwable) {
         if (null == throwable)
             return;
@@ -148,14 +175,15 @@ public class CMLog implements ICMLog {
         }
     }
 
-    private void send(final int nLogType) {
+    private synchronized  void send(final int nLogType) {
+        String url = (VALUE_INT_LOG_TYPE == nLogType ? UtilsLog.getLogPath() : UtilsLog.getCrashPath());
         if (!UtilsFile.isExists(UtilsFile.makePath(mContext.getFilesDir().getAbsolutePath(),
-                VALUE_INT_LOG_TYPE == nLogType ? UtilsLog.getLogPath() : UtilsLog.getCrashPath())))
+                url)))
             return;
 
         if (UtilsFile.getSize(UtilsFile.makePath(mContext.getFilesDir().getAbsolutePath(),
-                VALUE_INT_LOG_TYPE == nLogType ? UtilsLog.getLogPath() : UtilsLog.getCrashPath())) > 10 * 1000 * 1000) {
-            mContext.deleteFile(VALUE_INT_LOG_TYPE == nLogType ? UtilsLog.getLogPath() : UtilsLog.getCrashPath());
+                url)) > 10 * 1000 * 1000) {
+            mContext.deleteFile(url);
             return;
         }
 
@@ -169,7 +197,7 @@ public class CMLog implements ICMLog {
         lock.writeLock().lock();
 
         try {
-            FileInputStream fis = mContext.openFileInput(VALUE_INT_LOG_TYPE == nLogType ? UtilsLog.getLogPath() : UtilsLog.getCrashPath());
+            FileInputStream fis = mContext.openFileInput(url);
             int nReadSize = 0;
             byte[] buffer = new byte[UtilsEnv.VALUE_INT_BUFFER_SIZE];
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -182,20 +210,36 @@ public class CMLog implements ICMLog {
             Map<String, String> mapParam = new HashMap<String, String>();
             mapParam.put("data", baos.toString());
 
+            String sendType = (VALUE_INT_LOG_TYPE == nLogType ? "log" : "crash");
+            UtilsLog.log("send", sendType, null);
             ICMHttpResult iCMHttpResult = mICMHttp.requestToBufferByPostSync(UtilsNetwork.getURL(VALUE_INT_LOG_TYPE == nLogType ? UtilsLog.getLogURL() : UtilsLog.getCrashURL()), mapParam, null);
+
+            JSONObject jo = new JSONObject();
+
             if (null != iCMHttpResult) {
                 if (iCMHttpResult.isSuccess()) {
+                    UtilsJson.JsonSerialization(jo, " result ", "Success" );
+                    UtilsLog.log("send", sendType, jo);
                     sp.edit().putLong("send_log_time" + nLogType, lTime).apply();
-                    mContext.deleteFile(VALUE_INT_LOG_TYPE == nLogType ? UtilsLog.getLogPath() : UtilsLog.getCrashPath());
+                    mContext.deleteFile(url);
                 } else {
                     String exception = iCMHttpResult.getException();
+                    UtilsJson.JsonSerialization(jo, " result ", "Fail" );
+                    UtilsJson.JsonSerialization(jo, " reason ", exception);
+                    UtilsLog.log("send", sendType, jo);
                     if (!TextUtils.isEmpty(exception) && exception.contains("OutOfMemory")) {
-                        mContext.deleteFile(VALUE_INT_LOG_TYPE == nLogType ? UtilsLog.getLogPath() : UtilsLog.getCrashPath());
+                        mContext.deleteFile(url);
                     }
                 }
+            }else {
+                UtilsJson.JsonSerialization(jo, " result ", "Fail" );
+                UtilsJson.JsonSerialization(jo, " reason ", "iCMHttpResult is null!");
+                UtilsLog.log("send", sendType, jo);
             }
+
+
         } catch (OutOfMemoryError e) {
-            mContext.deleteFile(VALUE_INT_LOG_TYPE == nLogType ? UtilsLog.getLogPath() : UtilsLog.getCrashPath());
+            mContext.deleteFile(url);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

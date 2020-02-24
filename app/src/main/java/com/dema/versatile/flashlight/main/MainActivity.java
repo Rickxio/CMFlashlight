@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -39,6 +41,7 @@ import com.dema.versatile.mediation.core.in.IMediationConfig;
 import com.dema.versatile.mediation.core.in.IMediationMgr;
 import com.dema.versatile.mediation.core.in.IMediationMgrListener;
 import com.dema.versatile.mediation.utils.UtilsAd;
+import com.dema.versatile.scene.SceneConstants;
 import com.dema.versatile.scene.core.CMSceneFactory;
 import com.dema.versatile.scene.core.alert.AlertMgrImpl;
 import com.dema.versatile.scene.core.alert.IAlertMgr;
@@ -319,6 +322,31 @@ public class MainActivity extends BaseActivity {
         mIFlashlightMgr.register();
 
         verticalSeekBar = findViewById(R.id.progress);
+
+        //测试按钮
+ /*       Button crashButton = new Button(this);
+        crashButton.setText("Crash!");
+        crashButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+               for(int i=0 ; i<6 ; i++){
+                    final  int n = i;
+                    Thread t_i = new Thread("i:"+i){
+                        @Override
+                        public void run() {
+                            UtilsAd.logE("rick-superlog", "第"+n+"次请求广告");
+//                            UtilsLog.log("test_log", "第"+n+"次打印：线程："+Thread.currentThread().getId()+"，"+Thread.currentThread().getName(), null);
+                            UtilsLog.send();
+
+                        }
+                    };
+                   t_i.start();
+                }
+            }
+        });
+
+        addContentView(crashButton, new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));*/
 
     }
 

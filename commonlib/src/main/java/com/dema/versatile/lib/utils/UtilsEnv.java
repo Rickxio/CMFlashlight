@@ -185,7 +185,7 @@ public class UtilsEnv {
         UtilsJson.JsonSerialization(jsonObject, "language", UtilsEnv.getSystemLanguage());
         UtilsJson.JsonSerialization(jsonObject, "screen_w", UtilsSize.getScreenWidth(context));
         UtilsJson.JsonSerialization(jsonObject, "screen_h", UtilsSize.getScreenHeight(context));
-        logD("superlog", "UtilsEnv.referrer = "+UtilsEnv.getReferrer());
+        logD("superlog", "screen_w:screen_h = "+UtilsSize.getScreenWidth(context)+":"+UtilsSize.getScreenHeight(context));
         return jsonObject;
     }
 

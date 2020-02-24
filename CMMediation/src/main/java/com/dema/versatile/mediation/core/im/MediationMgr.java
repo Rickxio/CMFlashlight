@@ -18,6 +18,7 @@ import java.util.Map;
 
 import com.dema.versatile.lib.core.im.CMObserverIntelligence;
 import com.dema.versatile.lib.utils.UtilsJson;
+import com.dema.versatile.lib.utils.UtilsLog;
 import com.dema.versatile.mediation.CMMediationFactory;
 import com.dema.versatile.mediation.core.in.IAdItem;
 import com.dema.versatile.mediation.core.in.IAdPlatformMgr;
@@ -130,17 +131,16 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
         IMediationConfig iMediationConfig = getMediationConfig(strKey);
 
         if (null == iMediationConfig) {
-            UtilsAd.logE("rick-requestAdAsync-s", "iMediationConfig = null");
             return false;
         }
-        if(iMediationConfig.getAdKey().equals("view_alert")) {
-            UtilsAd.logE("rick-requestAdAsync-s", iMediationConfig.getAdKey());
-        }
-        if (!iMediationConfig.isSupportRequestScene(strScene))
-            return false;
 
-        if (mMapMediationRequestCount.containsKey(iMediationConfig) && mMapMediationRequestCount.get(iMediationConfig) > 0)
+        if (!iMediationConfig.isSupportRequestScene(strScene)){
+            UtilsAd.logE("rick-superlog-requestAdAsync-s", "no_SupportRequestScene:"+strScene);
             return false;
+        }
+        if (mMapMediationRequestCount.containsKey(iMediationConfig) && mMapMediationRequestCount.get(iMediationConfig) > 0) {
+            return false;
+        }
 
         boolean bResult = false;
         for (int nIndex = getMediationRequestAndLoadedCount(iMediationConfig); nIndex < iMediationConfig.getCacheCount(); nIndex++) {
@@ -161,10 +161,8 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
     }
 
     private boolean  requestAd(IMediationConfig iMediationConfig, String strKeyTime, int[] arrayResLayoutID, Size size) {
-        UtilsAd.logE("rick-requestAd-逻辑", Log.getStackTraceString(new Exception()));
         if (null == iMediationConfig || TextUtils.isEmpty(strKeyTime) || !mMapAdRequestIndex.containsKey(strKeyTime) || iMediationConfig.getAdKey() == null)
             return false;
-        UtilsAd.logE("rick-requestAd-逻辑-1",iMediationConfig.getAdKey() );
         synchronized(iMediationConfig.getAdKey()){
             boolean bResult = false;
             while (true) {
@@ -268,12 +266,22 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
             return false;
 
         String strAdID = adBean.mIAdItem.getAdID();
+        String strTimeKey = "spam_" + strPlatform + "_clicktime";
+        String strAllClickKey = "spam_all_" + strPlatform + "_click";
+        String key_interval = "clicktime_interval";
+        String key_count = "clickCount";
+
         UtilsAd.log("showAdView:"+strAdID, null);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         long lastAdTime = sp.getLong(strAdID, 0);
         long lTime = System.currentTimeMillis();
-        //屏蔽无效流量，相同广告id展示频率不能小于6s
-        if(lTime - lastAdTime < 6000){
+        int nAllClickCount = sp.getInt(strAllClickKey, 0);
+        long lLastClickTime = sp.getLong(strTimeKey, 0);
+        long mclicktime_interval = sp.getLong(key_interval, 3600000);
+        int mclickCount = sp.getInt(key_count, 2);
+
+        //屏蔽无效流量，一天点击不能超过3次，点击间隔不能超过1h,展示间隔不能超过6s
+        if(nAllClickCount >= mclickCount || lTime-lLastClickTime < mclicktime_interval || lTime - lastAdTime < 6000){
             return false;
         } else{
             sp.edit().putLong(strAdID, lTime).apply();
@@ -333,12 +341,22 @@ public class MediationMgr extends CMObserverIntelligence<IMediationMgrListener> 
             return false;
 
         String strAdID = adBean.mIAdItem.getAdID();
+        String strTimeKey = "spam_" + strPlatform + "_clicktime";
+        String strAllClickKey = "spam_all_" + strPlatform + "_click";
+        String key_interval = "clicktime_interval";
+        String key_count = "clickCount";
+
         UtilsAd.log("showInterstitialAd:"+strAdID, null);
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         long lastAdTime = sp.getLong(strAdID, 0);
         long lTime = System.currentTimeMillis();
-        //屏蔽无效流量，相同广告id展示频率不能小于6s
-        if(lTime - lastAdTime < 6000){
+        int nAllClickCount = sp.getInt(strAllClickKey, 0);
+        long lLastClickTime = sp.getLong(strTimeKey, 0);
+        long mclicktime_interval = sp.getLong(key_interval, 3600000);
+        int mclickCount = sp.getInt(key_count, 2);
+
+        //屏蔽无效流量，一天点击不能超过3次，点击间隔不能超过1h,展示间隔不能超过6s
+        if(nAllClickCount >= mclickCount || lTime-lLastClickTime < mclicktime_interval || lTime - lastAdTime < 6000){
             return false;
         } else{
             sp.edit().putLong(strAdID, lTime).apply();

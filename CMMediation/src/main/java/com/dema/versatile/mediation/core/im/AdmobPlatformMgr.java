@@ -36,7 +36,7 @@ public class AdmobPlatformMgr implements IAdPlatformMgr {
     @Override
     public boolean requestBannerAdAsync(String strAdKey, String strAdID, String strAdBannerSize, Size size, IAdPlatformMgrListener iAdPlatformMgrListener) {
 
-        UtilsAd.logE("rick-requestBannerAdAsync", Log.getStackTraceString(new Exception()));
+        UtilsAd.logE("rick-superlog-requestBannerAdAsync", "strAdID:"+strAdID+" , strAdBannerSize:"+strAdBannerSize);
 
         if (TextUtils.isEmpty(strAdID) || TextUtils.isEmpty(strAdBannerSize))
             return false;
@@ -89,7 +89,6 @@ public class AdmobPlatformMgr implements IAdPlatformMgr {
                     }
                 }
             });
-
             adView.loadAd(new AdRequest.Builder().build());
             JSONObject jsonObject = UtilsAd.getBaseAdLogJsonObject(strAdKey, strAdID, strAdRequestID, IMediationConfig.VALUE_STRING_TYPE_BANNER, "request");
             UtilsJson.JsonSerialization(jsonObject, "size", strAdBannerSize);

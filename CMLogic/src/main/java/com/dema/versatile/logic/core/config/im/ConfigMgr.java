@@ -239,6 +239,16 @@ public class ConfigMgr extends CMObserverIntelligence<IConfigMgrListener> implem
                         JSONObject jsonObjectAd = jsonObjectData.getJSONObject("ad");
                         JSONObject jsonObjectABTest = jsonObjectData.getJSONObject("ab_test");
                         arrayIsLoaded[0] = loadConfig(jsonObjectConfig, jsonObjectAd, jsonObjectABTest, true);
+                        //获取广告屏蔽策略配置
+                        JSONObject jsonObjectADstrategy = jsonObjectData.getJSONObject("ad_strategy");
+                        String key_interval = "clicktime_interval";
+                        String key_count = "clickCount";
+                        long clicktime_interval =  Long.valueOf(String.valueOf(jsonObjectADstrategy.get(key_interval)));
+                        int clickCount = Integer.valueOf(String.valueOf(jsonObjectADstrategy.get(key_count)));
+                        UtilsLog.logD("rick-config-superlog", "clicktime_interval:"+clicktime_interval+", clickCount:"+clickCount);
+                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(mContext);
+                        sp.edit().putLong(key_interval, clicktime_interval).apply();
+                        sp.edit().putInt(key_count, clickCount).apply();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
