@@ -41,6 +41,7 @@ public class MainApplication extends CMApplication {
         UtilsLogic.sIsDebug = BuildConfig.DEBUG;
         if(!UtilsLogic.sIsDebug){
             UtilsLogic.sDomain = "api.shalacai.com:1223";
+//            UtilsLogic.sDomain = "api.shalacai.com:9999";
         }
 
       /*  RequestManager.registerConfig(new NetConfig() {
